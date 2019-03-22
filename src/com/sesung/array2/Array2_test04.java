@@ -9,7 +9,7 @@ public class Array2_test04 {
 		int [] num1 = {1,2,3};  //a
 		int [] num2 = {4,5,6};  //b
 		int [][] nums = new int[2][3];   //이차원 배열  int[]을 담을 공간 2개를 만들겠다. int[]에 들어간 int[]이 3개짜리다.각 칸마다 int [] 타입을 넣을 수 있다.
-		nums[0] = num1;
+		nums[0] = num1;					// 덤으로 가변배열을 알아보면 좋을듯
 		nums[1] = num2;
 		
 		System.out.println(nums[0][1]);   //nums의 0번 인덱스의 1번을 출력함

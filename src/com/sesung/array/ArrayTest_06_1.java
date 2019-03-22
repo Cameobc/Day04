@@ -125,8 +125,6 @@ public class ArrayTest_06_1 {
 					System.out.println("학생 총점 :" + totals[i]);
 				}	
 
-
-
 			}else if(select==5) {
 				System.out.println("프로그램을 종료합니다.");
 				break;

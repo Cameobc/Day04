@@ -11,12 +11,14 @@ public class ArrayTest_06_1 {
 		int [] kors = null; // 국어점수
 		int [] math = null;//수학점수
 		int [] eng = null;//영어점수
+		int [] totals = null; //총점
 
 		while(true) {
 			System.out.println("1.학  생  등  록");
 			System.out.println("2.전체정보 조회");
 			System.out.println("3.학생정보 검색");
-			System.out.println("4.프로그램 종료");
+			System.out.println("4.전체 총점순 출력");
+			System.out.println("5.프로그램 종료");
 			int select = sc.nextInt();
 
 			if(select==1) {
@@ -28,7 +30,7 @@ public class ArrayTest_06_1 {
 				kors = new int[count];
 				math = new int[count];
 				eng = new int[count];
-
+				totals = new int [count];
 
 				for(int i=0;i<names.length;i++) {    //i<count 라고 해도 된다.
 					System.out.println(i+1+"학생 번호를 입력하세요.");
@@ -44,10 +46,10 @@ public class ArrayTest_06_1 {
 					eng[i]=sc.nextInt();
 
 					System.out.println("학생의 수학 점수를 입력하세요.");					
-					eng[i]=sc.nextInt();
+					math[i]=sc.nextInt();								
+					totals[i] = kors[i] +eng[i]+math[i];
+				
 				}//for end
-
-
 
 			}else if(select==2) {
 				for(int i=0;i<names.length;i++) {
@@ -82,8 +84,50 @@ public class ArrayTest_06_1 {
 					System.out.println("학생 정보가 없습니다.");
 				}
 
+			}else if(select==4) {		
+				int i =0;	
+				int temp = 0;
+				String stemp = "";
 
-			}else if(select==4) {
+				for(i=0;i<totals.length;i++) {
+					for(int j=i+1;j<totals.length;j++) {
+						if(totals[i]<totals[j]) {
+							temp = totals[i];
+							totals[i]=totals[j];
+							totals[j]=temp;
+							//numbers
+							temp = numbers[i];
+							numbers[i]=numbers[j];
+							numbers[j]=temp;
+							//kors
+							temp = kors[i];
+							kors[i]=kors[j];
+							kors[j]=temp;
+							//math
+							temp = math[i];
+							math[i]=math[j];
+							math[j]=temp;
+							//eng
+							temp = eng[i];
+							eng[i]=eng[j];
+							eng[j]=temp;
+							//names
+							stemp= names[i];
+							names[i]=names[j];
+							names[j]=stemp;							
+						}
+					}				
+					System.out.println("학생 번호 : "+numbers[i]);
+					System.out.println(" 학생 이름 : "+names[i]);
+					System.out.println(" 국어 점수 : "+kors[i]);
+					System.out.println(" 영어 점수 : "+eng[i]);
+					System.out.println(" 수학 점수 :"+math[i]);
+					System.out.println("학생 총점 :" + totals[i]);
+				}	
+
+
+
+			}else if(select==5) {
 				System.out.println("프로그램을 종료합니다.");
 				break;
 			}else {

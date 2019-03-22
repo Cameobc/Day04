@@ -74,8 +74,8 @@ public class ArrayTest_06 {
 				System.out.println("검색할 학생의 번호를 입력하세요.");
 				for(int j=0;j<names.length;j++) {
 					numbers[j] = sc.nextInt();
-				}
-				System.out.println("학생 번호 : "+numbers[i]+" 학생 이름 : "+names[i]+" 국어 점수 : "+kors[i]+" 영어 점수 : "+eng[i]+" 수학 점수 :"+math[i]");
+					System.out.println("학생 번호 : "+numbers[j]+" 학생 이름 : "+names[j]+" 국어 점수 : "+kors[j]+" 영어 점수 : "+eng[j]+" 수학 점수 :"+math[j]);
+				}				
 				break;
 				
 			}
